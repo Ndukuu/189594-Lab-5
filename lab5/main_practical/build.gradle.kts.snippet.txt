@@ -1,0 +1,22 @@
+// build.gradle.kts (Module :app)  -- NOT the Project one
+// Only the parts you change are shown. Keep everything else as it is.
+
+// 1) Top of the file, inside plugins { } (Step 13)
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt")
+}
+
+// 2) Inside android { } (Steps 4 and 14)
+android {
+    namespace = "com.example.tenantmanagementsystemgroupa"
+    // ... compileSdk, defaultConfig, etc. stay as they are ...
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+}
+
+// After editing: click "Sync Now". If a kapt / Kotlin 2.0 warning appears, ignore it (it is a warning, not an error).
